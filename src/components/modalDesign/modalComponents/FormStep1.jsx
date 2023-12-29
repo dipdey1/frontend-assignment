@@ -27,7 +27,7 @@ const FormStep1 = () => {
           </div>
         </div>
         <div style={{"height": "40px","gap":"24px", "display":"flex", "justifyContent":"flex-end"}}>
-          <Button type={"button"} color={"Primary"} style={{"width":"68px"}} handleClick={handleStep1}>
+          <Button type={"button"} style={{"width":"68px"}} handleClick={handleStep1}>
             <span className='text-White font-poppins font-semibold'>Next</span>          
           </Button>
         </div>

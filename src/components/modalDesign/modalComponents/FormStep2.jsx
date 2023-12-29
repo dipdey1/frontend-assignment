@@ -40,9 +40,9 @@ const FormStep2 = () => {
             <Button type={"button"} color={"Primary"} style={{"width":"68px"}} handleClick={handleJobPost}>
             <span className='text-White font-poppins font-semibold'>Save</span>          
           </Button> :
-          <Button type={"button"} color={"Primary"} style={{"width":"68px"}} handleClick={handleUpdatePostEdit}>
-          <span className='text-White font-poppins font-semibold'>Save</span>          
-        </Button>
+          <Button type={"button"} style={{"width":"68px"}} handleClick={handleUpdatePostEdit}>
+            <span className='text-White font-poppins font-semibold'>Save</span>          
+          </Button>
         }
         </div>
         <div className=' text-Error'><span>{error}</span></div>

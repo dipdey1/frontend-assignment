@@ -30,12 +30,12 @@ const Card = ({jobObject}) => {
                         </div>
                         <div className='flex'>
                             { jobObject.applyType === 'Quick Apply' ? 
-                            <Button type={"button"} color={"Primary"} style={{"height":"40px","gap":"5px","width":"110px"}}>
+                            <Button type={"button"} style={{"height":"40px","gap":"5px","width":"110px"}}>
                                 <span className='text-White'>Quick Apply</span>
                             </Button> :
-                            <Button type={"button"} color={"White"} additionalClass={"border-Primary border-[1px]"} style={{"height":"40px","gap":"5px","width":"147px"}}>
+                            <button type="button" className="button-lg bg-white hover:bg-white/90 ml-2.5 rounded-md shadow-md border-Primary border-[1px]" style={{"height":"40px","gap":"5px","width":"147px"}}>
                             <span>External Apply</span>
-                            </Button>
+                            </button>
 }
                         </div>
                     </div>
