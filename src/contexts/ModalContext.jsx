@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import axios from "axios";
 
 const ModalContext = React.createContext(null)
 
 export const ModalProvider = (props) => {
+    const baseURL = "https://658a7e53ba789a9622372a43.mockapi.io/api/v1/jobDescription"
     const [modalOpen, setOpenModal] = useState(false)
     const [modalSteps, setModalSteps] = useState("")
     const [jobObject, setJobObject] = useState({
@@ -11,32 +13,54 @@ export const ModalProvider = (props) => {
         industry:'',
         location:'',
         remoteType:'',
-        expMinimum:0,
-        expMaximum:0,
-        salaryMinimum:0,
-        employeeCount:0,
+        expMinimum:'',
+        expMaximum:'',
+        salaryMinimum:'',
+        employeeCount:'',
         applyType:''
     })
+    const [jobs, setJobs] = useState([])
+
+    useEffect(() => {
+        getJobsOnLoad()
+        console.log(jobs);
+    },[])
+
+    const getJobsOnLoad = async () => {
+        let jobList = await axios.get(baseURL).then((resp) => console.log(resp))
+        setJobs(jobList)
+    }
 
     const handleModalOpen = () => {
         setOpenModal(true)
-        console.log(modalOpen);
         setModalSteps("step 1")
     }
     const handleStep1 = () => {
         setModalSteps("step 2")
     }
     const handlechangeJobObject = (e,name) => {
-        console.log(jobObject);
-        console.log(e.target.value);
         setJobObject({...jobObject, [e.target.name]:e.target.value})
     }
 
+    const handleJobPost = async () => {
+        await axios.post(baseURL,jobObject).then((resp) => {console.log(resp);})
 
+        setJobObject({
+            jobTitle:'',
+            companyName:'',
+            industry:'',
+            location:'',
+            remoteType:'',
+            expMinimum:'',
+            expMaximum:'',
+            salaryMinimum:'',
+            employeeCount:'',
+            applyType:''
+        })
 
-
+    }
  
-    const contextData = {handleModalOpen, modalOpen, modalSteps,handleStep1, jobObject,handlechangeJobObject}
+    const contextData = {handleModalOpen, modalOpen, modalSteps,handleStep1, jobObject,handlechangeJobObject, handleJobPost}
 
 
 return (

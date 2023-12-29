@@ -7,7 +7,7 @@ import { useModal } from '../../../contexts/modalContext'
 
 const FormStep2 = () => {
 
-  const {handleStep1, jobObject, handlechangeJobObject} = useModal()
+  const {handleJobPost, jobObject, handlechangeJobObject} = useModal()
 
   return (
     <Container containerClasses='fixed inset-0 bg-black bg-opacity-25 flex justify-center items-center'>
@@ -37,7 +37,7 @@ const FormStep2 = () => {
           <RadioInputs title={"Apply Type"} name={"applyType"} handleClick={handlechangeJobObject} optionsObject={[{"name": "quickApply", "title":"Quick Apply"}, {"name": "extApply", "title":"External Apply"}]}/>
         </div>
         <div style={{"height": "40px","gap":"24px", "display":"flex", "justifyContent":"flex-end"}}>
-          <Button type={"button"} style={{"width":"68px"}}>
+          <Button type={"button"} style={{"width":"68px"}} handleClick={handleJobPost}>
             <span className='text-White font-poppins font-semibold'>Save</span>          
           </Button>
         </div>
