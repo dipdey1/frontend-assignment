@@ -2,7 +2,7 @@ import React from 'react'
 import DialogInput from '../../coreComponents/DialogInput'
 import Button from '../../coreComponents/Button'
 import RadioInputs from '../../coreComponents/RadioInputs'
-import { useModal } from '../../../contexts/modalContext'
+import { useModal } from '../../../contexts/ModalContext'
 
 const FormStep2 = () => {
 
