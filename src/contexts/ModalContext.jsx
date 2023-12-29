@@ -19,6 +19,7 @@ export const ModalProvider = (props) => {
         expMinimum:'',
         expMaximum:'',
         salaryMinimum:'',
+        salaryMaximum:'',
         employeeCount:'',
         applyType:''
     })
@@ -45,6 +46,7 @@ export const ModalProvider = (props) => {
             expMinimum:'',
             expMaximum:'',
             salaryMinimum:'',
+            salaryMaximum:'',
             employeeCount:'',
             applyType:''
         })
@@ -75,8 +77,8 @@ export const ModalProvider = (props) => {
             setError('Please select an application type!')
         }else{
         setError('')
-        await axios.post(baseURL,jobObject)
-        setJobs(prev => [...prev, jobObject])
+        let response = await axios.post(baseURL,jobObject)
+        setJobs(prev => [...prev, response.data])
         setJobObject({
             jobTitle:'',
             companyName:'',
@@ -86,6 +88,7 @@ export const ModalProvider = (props) => {
             expMinimum:'',
             expMaximum:'',
             salaryMinimum:'',
+            salaryMaximum:'',
             employeeCount:'',
             applyType:''
         })
@@ -104,6 +107,20 @@ export const ModalProvider = (props) => {
         await axios.put(`https://658a7e53ba789a9622372a43.mockapi.io/api/v1/jobDescription/${jobObject.id}`, jobObject)
         let response = await axios.get(baseURL)
         setJobs(response.data)
+        setJobObject({
+            id:'',
+            jobTitle:'',
+            companyName:'',
+            industry:'',
+            location:'',
+            remoteType:'',
+            expMinimum:'',
+            expMaximum:'',
+            salaryMinimum:'',
+            salaryMaximum:'',
+            employeeCount:'',
+            applyType:''
+        })
         setModalSteps('')
         setOpenModal(false)
         setEditStatus(false)
