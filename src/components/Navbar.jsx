@@ -2,7 +2,7 @@
 import React from 'react'
 import Container from './coreComponents/Container'
 import Button from './coreComponents/Button'
-import { useModal } from '../contexts/modalContext'
+import { useModal } from '../contexts/ModalContext'
 
 const Navbar = () => {
     const {handleModalOpen} = useModal()

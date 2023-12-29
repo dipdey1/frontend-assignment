@@ -1,5 +1,5 @@
 import React from 'react'
-import { useModal } from '../../contexts/modalContext'
+import { useModal } from '../../contexts/ModalContext'
 import FormStep1 from './modalComponents/FormStep1'
 import FormStep2 from './modalComponents/FormStep2'
 

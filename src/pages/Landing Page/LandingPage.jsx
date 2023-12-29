@@ -1,7 +1,7 @@
 import React from 'react'
 import Navbar from '../../components/Navbar'
 import Modal from '../../components/modalDesign/Modal'
-import { useModal } from '../../contexts/modalContext'
+import { useModal } from '../../contexts/ModalContext'
 import Card from '../../components/Card'
 
 const LandingPage = () => {

@@ -1,4 +1,4 @@
-import { ModalProvider } from './contexts/modalContext'
+import { ModalProvider } from './contexts/ModalContext'
 import LandingPage from './pages/Landing Page/LandingPage'
 
 function App() {

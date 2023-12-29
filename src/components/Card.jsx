@@ -1,6 +1,6 @@
 import React from 'react'
 import Button from './coreComponents/Button'
-import { useModal } from '../contexts/modalContext'
+import { useModal } from '../contexts/ModalContext'
 
 const Card = ({jobObject}) => {
     const {handlePostEdit, handleJobDelete} = useModal()
