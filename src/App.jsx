@@ -1,4 +1,3 @@
-import './App.css'
 import { ModalProvider } from './contexts/modalContext'
 import LandingPage from './pages/Landing Page/LandingPage'
 

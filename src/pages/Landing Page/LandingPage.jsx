@@ -2,17 +2,24 @@ import React from 'react'
 import Navbar from '../../components/Navbar'
 import Modal from '../../components/modalDesign/Modal'
 import { useModal } from '../../contexts/modalContext'
-import Container from '../../components/coreComponents/Container'
+import Card from '../../components/Card'
 
 const LandingPage = () => {
-    const {modalOpen} = useModal()
+    const {modalOpen, jobs} = useModal()
 
   return (
     <>
-    <Container containerClasses={"container max-w-screen-2xl bg-Primary min-h-screen flex flex-col"}>
+    <div className="bg-CardBorder min-h-screen flex flex-col" style={{"width":"1900px"}}>
         <Navbar/>
         {modalOpen === false ? null : <Modal />}
-    </Container>
+        <div className='flex flex-wrap'>
+            {
+                jobs.map((job) => {
+                    return <Card key={job.id} jobObject={job}/>
+                })
+            }   
+        </div>
+    </div>
     </>
   )
 }
